@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700'>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Pokedex-js</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <h1 class="main-title">
+        <a href="index.html">Pokedex-js</a>
+      </h1>
+      <div class="lights">
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+      </div>
+    </header>
+    <section class="main-container">
+      <div class="main-div js-main-div"></div>
+    </section>
+    <!-- template script  -->
+    <script type="text/x-handlebars-template" class="js-listpoke-template">
+      <div class="pokelist">
+        <ul class='list--unstyled'>{{{items}}}</ul>
+      </div>
+      <div class="pokelist__nav">
+        {{{buttons}}}
+      </div>
+    </script>
+    <script type="text/x-handlebars-template" class="js-listpoke-template-button">
+      <button class="{{clase}}">{{texto}}</button>
+    </script>
+    <script type="text/x-handlebars-template" class="js-listpoke-item-template">
+      <li class='pokelist__item'>
+        <a href='#' class='pokelist__link js-view-detail' data-poke-index="{{num}}">
+          <div class="item-number">{{num}}</div>
+          <div class="item-name">
+            <img src="http://pokeapi.co/media/sprites/pokemon/{{id}}.png" alt="{{name}}" class="mini-sprite">
+            {{name}}
+          </div>
+        </a>
+      </li>
+    </script>
+    <script type="text/x-handlebars-template" class="js-poke-template">
+      <div class="poke-details">
+        <div class="poke-details__card">
+          <img src="http://pokeapi.co/media/sprites/pokemon/{{id}}.png" class="poke-details__image">
+          <div class="poke-details__types">
+            {{#each types}}
+            <div class="type-icon type-{{type.name}}">{{type.name}}</div>
+            {{/each}}
+          </div>
+        </div>
+        <div class="poke-details__data">
+          <div class="poke-details__header">
+            <h1 class="poke-details__title">{{num}} {{name}}</h1>
+          </div>
+          <div class="poke-details__stats">
+            <table class="stats-table">
+              <tr>
+                <th>Peso</th>
+                <td>{{weight}} kg</td>
+                <th>Altura</th>
+                <td>{{height}} m</td>
+              </tr>
+            </table>
+            <div class="poke-details__abilities">
+              <h2 class="poke-details__title">Habilidades</h2>
+              <ul class="list--unstyled">
+                {{#each abilities}}
+                  <li><a href="{{ability.url}}" target="_blank" rel="nofollow">{{ability.name}}</a></li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+          <div class="poke-details__moves">
+            <h2 class="poke-details__title">Movimientos</h2>
+            <ul class="poke-moves list--unstyled">
+              {{#each moves}}
+                <li>
+                  <h3 class="poke-details__title poke-moves__move-title">{{move.name}}</h3>
+                  <table class="stats-table">
+                    <thead>
+                      <tr>
+                        <th>Nivel</th>
+                        <th>M&eacute;todo</th>
+                        <th>Versi&oacute;n</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {{#each version_group_details}}
+                      <tr>
+                        <td>{{level_learned_at}}</td>
+                        <td>{{move_learn_method.name}}</td>
+                        <td>{{version_group.name}}</td>
+                      </tr>
+                      {{/each}}
+                    </tbody>
+                  </table>
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+        <div class="poke-details__nav">
+          <a href="#" class="js-poke-details-back">Regresar a listado</a>
+        </div>
+      </div>
+    </script>
+    <!-- / template script  -->
+    <script src="js/jquery.js"></script>
+    <script src="js/handlebars.js"></script>
+    <script src="js/pokedex.js"></script>
+  </body>
+</html>

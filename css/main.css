@@ -22,6 +22,21 @@ a:hover{ text-decoration: underline; }
   margin: 0;
   padding: 0;
 }
+.button{
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  padding: 5px 10px;
+  transition: all 0.5s ease-out;
+}
+.button:hover{
+  box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+.button--primary{
+  background-color: #A81717;
+  color: #FFFFFF;
+}
 .main-header{
   background-color: #A81717;
   color: #FFFFFF;
@@ -133,8 +148,9 @@ a:hover{ text-decoration: underline; }
   padding: 1rem;
   text-align: left;
 }
-.stats-table{ width: 100%; }
+.stats-table, .moves-table{ width: 100%; }
 .stats-table th{ text-align: left; }
+.stats-table td{ text-align: right; }
 .poke-details__abilities{ text-transform: capitalize; }
 .poke-details__moves{
   border-top: 3px solid #A81717;

@@ -32,11 +32,11 @@
       </div>
     </script>
     <script type="text/x-handlebars-template" class="js-listpoke-template-button">
-      <button class="{{clase}}">{{texto}}</button>
+      <button class="button button--primary {{clase}}">{{texto}}</button>
     </script>
     <script type="text/x-handlebars-template" class="js-listpoke-item-template">
       <li class='pokelist__item'>
-        <a href='#' class='pokelist__link js-view-detail' data-poke-index="{{num}}">
+        <a href='#' class='pokelist__link js-view-detail' data-poke-index="{{id}}">
           <div class="item-number">{{num}}</div>
           <div class="item-name">
             <img src="//pokeapi.co/media/sprites/pokemon/{{id}}.png" alt="{{name}}" class="mini-sprite">
@@ -60,12 +60,34 @@
             <h1 class="poke-details__title">{{num}} {{name}}</h1>
           </div>
           <div class="poke-details__stats">
+            <h2 class="poke-details__title">Caracter&iacute;sticas</h2>
             <table class="stats-table">
               <tr>
                 <th>Peso</th>
                 <td>{{weight}} kg</td>
                 <th>Altura</th>
                 <td>{{height}} m</td>
+              </tr>
+            </table>
+            <h2 class="poke-details__title">Stats base</h2>
+            <table class="stats-table">
+              <tr>
+                <th>Ataque</th>
+                <td>{{atk}}</td>
+                <th>Defensa</th>
+                <td>{{def}}</td>
+              </tr>
+              <tr>
+                <th>Atq especial</th>
+                <td>{{spatk}}</td>
+                <th>Def especial</th>
+                <td>{{spdef}}</td>
+              </tr>
+              <tr>
+                <th>Velocidad</th>
+                <td>{{spd}}</td>
+                <th>Salud</th>
+                <td>{{hp}}</td>
               </tr>
             </table>
             <div class="poke-details__abilities">
@@ -83,7 +105,7 @@
               {{#each moves}}
                 <li>
                   <h3 class="poke-details__title poke-moves__move-title">{{move.name}}</h3>
-                  <table class="stats-table">
+                  <table class="moves-table">
                     <thead>
                       <tr>
                         <th>Nivel</th>

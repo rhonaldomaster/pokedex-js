@@ -1,14 +1,22 @@
+html,body {
+  height:100%;
+}
 html{
   font-family: 'Open sans','Helvetica Neue',Helvetica,sans-serif;
   font-size: 16px;
+}
+body{
+  background: #7A7A7A;
+  background: -moz-radial-gradient(center, ellipse cover, #FFFFFF 0%, #7A7A7A 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, #FFFFFF 0%,#7A7A7A 100%);
+  background: radial-gradient(ellipse at center, #FFFFFF 0%,#7A7A7A 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#7A7A7A',GradientType=1 );
 }
 a{
   color: #000000;
   text-decoration: none;
 }
-a:hover{
-  text-decoration: underline;
-}
+a:hover{ text-decoration: underline; }
 .list--unstyled{
   list-style-type: none;
   margin: 0;
@@ -24,11 +32,7 @@ a:hover{
   display: inline-block;
   margin: 0;
 }
-.main-container{
-  background-color: #7A7A7A;
-  background: linear-gradient(to bottom, #7A7A7A 0%, #FFFFFF 100%);
-  padding: 1rem;
-}
+.main-container{ padding: 1rem; }
 .lights{
   float: right;
   margin-top: 0.8rem;
@@ -47,22 +51,13 @@ a:hover{
   height: 80vh;
   justify-content: center;
 }
-.main-menu{
-  list-style-type: none;
-}
-.main-menu__item{
-  margin: 1rem 0;
-  text-align: center;
-}
-.main-div{
-  text-align: center;
-}
+.main-div{ text-align: center; }
 .loading-img{
   margin-top: 50vh;
   transform: translateY(-55%);
 }
 .pokelist{
-  max-height: 75vh;
+  max-height: 80vh;
   overflow: auto;
 }
 .pokelist__item{
@@ -79,12 +74,8 @@ a:hover{
   display: block;
   padding: 1rem;
 }
-.pokelist__link:hover{
-  text-decoration: none;
-}
-.pokelist__nav{
-  padding: 0.5rem 0;
-}
+.pokelist__link:hover{ text-decoration: none; }
+.pokelist__nav{ padding: 0.5rem 0; }
 .item-number{
   display: inline-block;
   max-width: 5%;
@@ -105,8 +96,8 @@ a:hover{
   max-width: 320px;
 }
 .poke-details__card{
-  background: radial-gradient(ellipse at center, #ffffff 0%,#8287c4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#8287c4',GradientType=1 );
+  background: radial-gradient(ellipse at center, #FFFFFF 0%,#8287C4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#8287C4',GradientType=1 );
   padding: 1rem 0;
   text-align: center;
 }
@@ -142,20 +133,18 @@ a:hover{
   padding: 1rem;
   text-align: left;
 }
-.stats-table{
-  width: 100%;
-}
-.stats-table th{
-  text-align: left;
-}
-.poke-details__abilities{
-  text-transform: capitalize;
-}
+.stats-table{ width: 100%; }
+.stats-table th{ text-align: left; }
+.poke-details__abilities{ text-transform: capitalize; }
 .poke-details__moves{
   border-top: 3px solid #A81717;
   padding: 1rem;
   text-align: left;
   text-transform: capitalize;
+}
+.poke-moves{
+  max-height: 50vh;
+  overflow: auto;
 }
 .poke-moves__move-title{
   border-bottom: 1px solid #979797;
@@ -172,12 +161,14 @@ a:hover{
 
 /* types */
 .type-icon {
+  border-radius: 2px;
   color: #FFFFFF;
   display: inline-block;
   font-size: 12px;
-  line-height: 1;
+  line-height: 1rem;
   margin: 1px 0;
-  padding: 3px 0;
+  padding: 3px;
+  text-shadow: 1px 1px 1px #333;
   text-transform: uppercase;
   width: 54px;
 }

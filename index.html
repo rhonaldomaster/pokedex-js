@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,700'>
     <link rel="stylesheet" href="css/main.css">
     <title>Pokedex-js</title>
   </head>
@@ -39,7 +39,7 @@
         <a href='#' class='pokelist__link js-view-detail' data-poke-index="{{num}}">
           <div class="item-number">{{num}}</div>
           <div class="item-name">
-            <img src="http://pokeapi.co/media/sprites/pokemon/{{id}}.png" alt="{{name}}" class="mini-sprite">
+            <img src="//pokeapi.co/media/sprites/pokemon/{{id}}.png" alt="{{name}}" class="mini-sprite">
             {{name}}
           </div>
         </a>
@@ -48,7 +48,7 @@
     <script type="text/x-handlebars-template" class="js-poke-template">
       <div class="poke-details">
         <div class="poke-details__card">
-          <img src="http://pokeapi.co/media/sprites/pokemon/{{id}}.png" class="poke-details__image">
+          <img src="//pokeapi.co/media/sprites/pokemon/{{id}}.png" class="poke-details__image">
           <div class="poke-details__types">
             {{#each types}}
             <div class="type-icon type-{{type.name}}">{{type.name}}</div>
@@ -107,7 +107,7 @@
           </div>
         </div>
         <div class="poke-details__nav">
-          <a href="#" class="js-poke-details-back">Regresar a listado</a>
+          <a href="#" class="js-back">Regresar a listado</a>
         </div>
       </div>
     </script>

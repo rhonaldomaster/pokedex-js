@@ -28,14 +28,14 @@ var pokedexjs = (function () {
     var ajx = $.getJSON(url);
     $mainDiv.html(loadingImg);
     ajx.done(function (resp) {
-      var listItems = '', id = 0;
+      var listItems = '', id = 0, buttons, listpoke;
       $.each(resp.results,function (idx,val) {
         id = idx+offset+1;
         listItems += itemTemplate({id: id, num: pad(id,3), name: val.name});
       });
-      var buttons = (resp.previous!=null ? buttonTemplate({clase:'js-prev',texto:'Anterior'}) : '')
+      buttons = (resp.previous!=null ? buttonTemplate({clase:'js-prev',texto:'Anterior'}) : '')
         + (resp.next!=null ? buttonTemplate({clase:'js-next',texto:'Siguiente'}) : '');
-      var listpoke = listTemplate({items:listItems,buttons:buttons});
+      listpoke = listTemplate({items:listItems,buttons:buttons});
       $mainDiv.html(listpoke);
     });
   }
@@ -65,7 +65,7 @@ var pokedexjs = (function () {
       var ajx = $.getJSON(url);
       $mainDiv.html(loadingImg);
       ajx.done(function (resp) {
-        var pokemon = {
+        var html = '', pokemon = {
           id: num*1, num: pad(num,3), name: resp.name, types: resp.types.reverse(), weight: resp.weight/10,
           height: resp.height/10, abilities:resp.abilities, moves: resp.moves,
           atk:0, def:0, spatk:0, spdef:0, spd:0, hp:0
@@ -78,7 +78,7 @@ var pokedexjs = (function () {
           if(val.stat.name=='speed') pokemon.spd = val.base_stat;
           if(val.stat.name=='hp') pokemon.hp = val.base_stat;
         });
-        var html = pokeDetailTemplate(pokemon);
+        html = pokeDetailTemplate(pokemon);
         $mainDiv.html(html);
       });
     },500);
